@@ -1,15 +1,15 @@
 
 ## load test set
-test.set <- read.table(file="data/UCI HAR Dataset/test/X_test.txt",header=FALSE,allowEscapes=T)
+test.set <- read.table(file="UCI HAR Dataset/test/X_test.txt",header=FALSE,allowEscapes=T)
 ## load test subject
-test.subject <- read.table(file="data/UCI HAR Dataset/test/subject_test.txt")
+test.subject <- read.table(file="UCI HAR Dataset/test/subject_test.txt")
 ## merge test set and subject
 test.set <- cbind(test.set,subject=test.subject)
 
 ## load train set
-train.set <- read.table(file="data/UCI HAR Dataset/train/X_train.txt",header=FALSE,allowEscapes=T)
+train.set <- read.table(file="UCI HAR Dataset/train/X_train.txt",header=FALSE,allowEscapes=T)
 ## load train subject
-train.subject <- read.table(file="data/UCI HAR Dataset/train/subject_train.txt")
+train.subject <- read.table(file="UCI HAR Dataset/train/subject_train.txt")
 ## merge train set and subject
 train.set <- cbind(train.set,subject=train.subject)
 
@@ -17,7 +17,7 @@ train.set <- cbind(train.set,subject=train.subject)
 total.set <- rbind(test.set, train.set)
 
 ## load features names
-features <- read.table(file="data/UCI HAR Dataset/features.txt",header=FALSE)
+features <- read.table(file="UCI HAR Dataset/features.txt",header=FALSE)
 feature.nm <- sapply(features$V2,function(x){
     x <- gsub("\\(","",x)
     x <- gsub("\\)","",x)
