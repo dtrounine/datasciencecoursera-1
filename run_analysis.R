@@ -51,4 +51,5 @@ avg.ds <- aggregate(mean.std.ds[,!(names(mean.std.ds) %in% c("activities","subje
 names(avg.ds)[1] <- "activities"
 names(avg.ds)[2] <- "subject"
 
-write.csv(file="tidy.data.set.csv",avg.ds, row.names=F,quote=F)
+## Save tidy data
+write.table(file="tidy.data.set.txt", avg.ds, row.names=F,quote=F,se="\t")
